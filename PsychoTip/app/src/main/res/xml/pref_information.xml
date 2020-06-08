@@ -1,0 +1,14 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="Tentang Kami" >
+        <intent android:targetPackage="com.example.psychotip"
+            android:targetClass="com.example.psychotip.AboutUs"/>
+    </Preference>
+
+    <Preference android:title="Hubungi Kami" >
+        <intent android:targetPackage="com.example.psychotip"
+            android:targetClass="com.example.psychotip.ContactUsActivity"/>
+    </Preference>
+
+    <Preference android:title="Versi Aplikasi"
+        android:summary="@string/app_version"/>
+</PreferenceScreen>

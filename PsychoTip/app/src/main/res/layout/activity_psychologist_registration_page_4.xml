@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".PsychologistRegistrationPage4">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/muli_black"
+        android:text="Daftar Sebagai Psikolog"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/bankNameSpinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="350dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/colorWhite"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <EditText
+        android:id="@+id/accountNumber"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorWhite"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Nomor Rekening"
+        android:inputType="text"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#eee"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/bankNameSpinner"
+        app:layout_constraintStart_toStartOf="@+id/bankNameSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/bankNameSpinner" />
+
+    <EditText
+
+        android:id="@+id/accountName"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorWhite"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Nama Tertera pada Rekening"
+        android:inputType="text"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#eee"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/accountNumber"
+        app:layout_constraintStart_toStartOf="@+id/accountNumber"
+        app:layout_constraintTop_toBottomOf="@+id/accountNumber" />
+
+    <EditText
+        android:id="@+id/accountFile"
+        android:layout_width="236dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorWhite"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Hal. Depan Buku Rekening"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#eee"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/accountName"
+        app:layout_constraintTop_toBottomOf="@+id/accountName" />
+
+    <Button
+        android:id="@+id/accountFileButton"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/white_button"
+        android:text="Unggah File"
+        android:textColor="#4f4f4f"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/accountFile"
+        app:layout_constraintEnd_toStartOf="@+id/accountFile"
+        app:layout_constraintStart_toStartOf="@+id/accountName"
+        app:layout_constraintTop_toTopOf="@+id/accountFile" />
+
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_button"
+        android:text="Lanjut"
+        android:textColor="#4f4f4f"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountFile" />
+
+    <ImageView
+        android:id="@+id/waves"
+        android:layout_width="411dp"
+        android:layout_height="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_wave" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

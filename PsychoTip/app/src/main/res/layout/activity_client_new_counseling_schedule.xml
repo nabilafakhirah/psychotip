@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".ClientNewCounselingSchedule">
+
+    <ImageView
+        android:id="@+id/waves_asset"
+        android:layout_width="411dp"
+        android:layout_height="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_wave" />
+
+    <EditText
+        android:id="@+id/problem_title"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Judul Masalah"
+        android:inputType="text"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorGray1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/counseling_duration"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/counseling_duration"
+        app:layout_constraintTop_toBottomOf="@+id/counseling_duration" />
+
+    <EditText
+        android:id="@+id/etChooseTime"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Jam Mulai"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorGray1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/counseling_date"
+        app:layout_constraintStart_toStartOf="@+id/counseling_date"
+        app:layout_constraintTop_toBottomOf="@+id/counseling_date" />
+
+    <EditText
+        android:id="@+id/counseling_date"
+        android:layout_width="350dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:drawableEnd="@drawable/ic_calendar_primary"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Tanggal"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorGray1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/counseling_duration"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/etChooseTime"
+        app:layout_constraintStart_toStartOf="@+id/etChooseTime"
+        app:layout_constraintTop_toBottomOf="@+id/etChooseTime" />
+
+    <EditText
+
+        android:id="@+id/problem_description"
+        android:layout_width="352dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:gravity="top|left"
+        android:hint="Deskripsi Masalah"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLength="2000"
+        android:maxLines="4"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorGray1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/problem_title"
+        app:layout_constraintStart_toStartOf="@+id/problem_title"
+        app:layout_constraintTop_toBottomOf="@+id/problem_title" />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/primary_button"
+        android:text="Buat Jadwal"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/problem_description" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".PsychologistRegistrationPage3">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/muli_black"
+        android:text="Daftar Sebagai Psikolog"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sippNumber"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/colorWhite"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Nomor SIPP"
+        android:inputType="text"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#eee"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <Spinner
+        android:id="@+id/specializationSpinner"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="350dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorWhite"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/sippNumber"
+        app:layout_constraintStart_toStartOf="@+id/sippNumber"
+        app:layout_constraintTop_toBottomOf="@+id/sippNumber" />
+
+    <EditText
+        android:id="@+id/ktp"
+        android:layout_width="236dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorWhite"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Scan KTP"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#eee"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/specializationSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/specializationSpinner" />
+
+    <Button
+        android:id="@+id/ktpUploadButton"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/white_button"
+        android:text="Unggah File"
+        android:textColor="#4f4f4f"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ktp"
+        app:layout_constraintEnd_toStartOf="@+id/ktp"
+        app:layout_constraintStart_toStartOf="@+id/specializationSpinner"
+        app:layout_constraintTop_toTopOf="@+id/ktp" />
+
+    <EditText
+        android:id="@+id/ijazah"
+        android:layout_width="236dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorWhite"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Scan Ijazah*"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#eee"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ktp"
+        app:layout_constraintTop_toBottomOf="@+id/ktp" />
+
+    <Button
+        android:id="@+id/ijazahUploadButton"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/white_button"
+        android:text="Unggah File"
+        android:textColor="#4f4f4f"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ijazah"
+        app:layout_constraintEnd_toStartOf="@+id/ktp"
+        app:layout_constraintStart_toStartOf="@+id/ktpUploadButton"
+        app:layout_constraintTop_toTopOf="@+id/ijazah" />
+
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_button"
+        android:text="Lanjut"
+        android:textColor="#4f4f4f"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/waves"
+        android:layout_width="411dp"
+        android:layout_height="148dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_wave" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="*Anda perlu memiliki gelar magister untuk mendaftar"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="@+id/ijazah"
+        app:layout_constraintStart_toStartOf="@+id/ijazah"
+        app:layout_constraintTop_toBottomOf="@+id/ijazah" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex cover py-4">
+        <div class="container">
+
+            <ul class="breadcrumb px-0 mb-4">
+                <li class="breadcrumb-item"><a href="{% url 'psychotip_admin:index' %}"><b>Home</b></a></li>
+                <li class="breadcrumb-item active"><b>Tambah Quote of the Day</b></li>
+            </ul>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4 mb-3 dash-title">
+
+                    <h1 class="display-4 dash-text my-0">Quote of</h1>
+                    <h1 class="display-4 dash-text mb-3">the Day.</h1>
+                    <img class="dash-text mb-3"
+                         src="{% static 'images/Dashboard - Admin/undraw_book_lover_mkck.svg' %}"
+                         alt="Pembayaran Psikolog">
+
+                    <a class="link-underline-text-big link-underline" href="{% url 'psychotip_admin:qotd_list' %}">Lihat
+                        Daftar Kutipan</a>
+
+
+                    <h1 class="full-dashboard-text">Quote of the Day.</h1>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <form class="quote-of-the-day px-3" action="{% url 'psychotip_admin:create_qotd' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group mb-4">
+                            <label for="kutipan">Kutipan</label>
+                            <textarea class="form-control" id="quote" name="quote" rows="5"
+                                      placeholder="Tulis kutipan disini."></textarea>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="exampleInputEmail1">Penulis</label>
+                            <input type="text" class="form-control" id="author" name="author"
+                                   placeholder="Tulis nama penulis disini.">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                SUBMIT
+                            </button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-4">
+                        <a class="link-underline-text-small link-underline"
+                           href="{% url 'psychotip_admin:qotd_list' %}">Lihat Daftar Kutipan</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+{% endblock %}
+
+{% block javascript %}
+    <script>
+
+        $(document).ready(function () {
+
+            if ($(window).width() < 992) {
+                $(".dash-text").removeClass("display-4").addClass("display-5");
+            }
+
+            if ($(window).width() < 768) {
+                $(".dash-title").addClass("text-center");
+
+                $(".card-dash-pic").addClass("justify-content-center my-2");
+                $(".card-dash-text").addClass("justify-content-center my-2");
+                $(".card-dash-arrow").addClass("justify-content-center my-2");
+            }
+
+        });
+
+        $(window).on('resize', function () {
+
+            if ($(window).width() < 992) {
+                $(".dash-text").removeClass("display-4").addClass("display-5");
+            } else {
+                $(".dash-text").removeClass("display-5").addClass("display-4");
+            }
+
+            if ($(window).width() < 768) {
+                $(".dash-title").addClass("text-center");
+
+                $(".card-dash-pic").addClass("justify-content-center my-2");
+                $(".card-dash-text").addClass("justify-content-center my-2");
+                $(".card-dash-arrow").addClass("justify-content-center my-2");
+            } else {
+                $(".dash-title").removeClass("text-center");
+
+                $(".card-dash-pic").removeClass("justify-content-center my-2");
+                $(".card-dash-text").removeClass("justify-content-center my-2");
+                $(".card-dash-arrow").removeClass("justify-content-center my-2");
+            }
+        });
+
+    </script>
+{% endblock %}

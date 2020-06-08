@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex cover py-4">
+        <div class="container">
+
+            <ul class="breadcrumb px-0 mb-4">
+                <li class="breadcrumb-item"><a href="{% url 'psychotip_admin:index' %}"><b>Home</b></a></li>
+                <li class="breadcrumb-item"><a href="{% url 'psychotip_admin:quote_of_the_day' %}"><b>Tambah Quote of the Day</b></a></li>
+                <li class="breadcrumb-item active"><b>Daftar Kutipan</b></li>
+            </ul>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4 mb-3 dash-title">
+
+                    <h1 class="display-4 dash-text my-0">Quote of</h1>
+                    <h1 class="display-4 dash-text mb-3">the Day.</h1>
+                    <img class="dash-text"
+                         src="{% static 'images/Dashboard - Admin/undraw_book_lover_mkck.svg' %}"
+                         alt="Pembayaran Psikolog">
+                    <h1 class="full-dashboard-text">Quote of the Day.</h1>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <div class="list-group">
+
+                        {% for i in quotes %}
+
+                            <div class="list-group-item flex-column align-items-start">
+                                <p class="mb-1 text-primary"> {{ i.konten }} </p>
+                                <small> {{ i.author }} </small>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+{% endblock %}
+
+{% block javascript %}
+    <script>
+
+        $(document).ready(function () {
+
+            if ($(window).width() < 992) {
+                $(".dash-text").removeClass("display-4").addClass("display-5");
+            }
+
+            if ($(window).width() < 768) {
+                $(".dash-title").addClass("text-center");
+
+                $(".card-dash-pic").addClass("justify-content-center my-2");
+                $(".card-dash-text").addClass("justify-content-center my-2");
+                $(".card-dash-arrow").addClass("justify-content-center my-2");
+            }
+
+        });
+
+        $(window).on('resize', function () {
+
+            if ($(window).width() < 992) {
+                $(".dash-text").removeClass("display-4").addClass("display-5");
+            } else {
+                $(".dash-text").removeClass("display-5").addClass("display-4");
+            }
+
+            if ($(window).width() < 768) {
+                $(".dash-title").addClass("text-center");
+
+                $(".card-dash-pic").addClass("justify-content-center my-2");
+                $(".card-dash-text").addClass("justify-content-center my-2");
+                $(".card-dash-arrow").addClass("justify-content-center my-2");
+            } else {
+                $(".dash-title").removeClass("text-center");
+
+                $(".card-dash-pic").removeClass("justify-content-center my-2");
+                $(".card-dash-text").removeClass("justify-content-center my-2");
+                $(".card-dash-arrow").removeClass("justify-content-center my-2");
+            }
+        });
+
+    </script>
+{% endblock %}

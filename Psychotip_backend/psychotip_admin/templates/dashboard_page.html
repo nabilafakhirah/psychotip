@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex cover py-4">
+        <div class="container">
+
+            <ul class="breadcrumb px-0 mb-4">
+                <li class="breadcrumb-item active"><b>Home</b></li>
+            </ul>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4 mb-3 dash-title">
+
+                    <h1 class="display-4 dash-text my-0">Dash —</h1>
+                    <h1 class="display-4 dash-text">board.</h1>
+                    <h1 class="full-dashboard-text">Dashboard.</h1>
+                </div>
+                <div class="col-sm-12 col-md-8">
+
+                    <div class="card px-3 mb-4 shadow-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="{% comment %}col-sm-12{% endcomment %} col-3 align-items-center d-flex card-dash-pic pl-0">
+                                    <img class="img-fluid d-block"
+                                         src="{% static 'images/Dashboard - Admin/undraw_make_it_rain_iwk4 (1).svg' %}"
+                                         alt="Pembayaran Psikolog">
+                                </div>
+                                <div class="col-7 align-items-center d-flex card-dash-text">
+
+                                    <p class="text-primary my-0 card-dash-text-obj"><b>Pembayaran Psikolog</b></p>
+
+                                </div>
+                                <div class="col-2 align-items-center d-flex card-dash-arrow">
+                                    <a class="link link--arrowed" href="#">
+                                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32"
+                                             height="32" viewBox="0 0 32 32">
+                                            <g fill="none" stroke="#01C1C6" stroke-width="1.5" stroke-linejoin="round"
+                                               stroke-miterlimit="10">
+                                                <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                                <path class="arrow-icon--arrow"
+                                                      d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card px-3 mb-4 shadow-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="{% comment %}col-sm-12{% endcomment %} col-3 align-items-center d-flex card-dash-pic pl-0">
+                                    <img class="img-fluid d-block"
+                                         src="{% static 'images/Dashboard - Admin/undraw_booking_33fn.svg' %}"
+                                         alt="Pembayaran Psikolog">
+                                </div>
+                                <div class="col-7 align-items-center d-flex card-dash-text">
+
+                                    <p class="text-primary my-0 card-dash-text-obj"><b>Jadwalkan Konseling</b></p>
+
+                                </div>
+                                <div class="col-2 align-items-center d-flex card-dash-arrow">
+                                    <a class="link link--arrowed" href="#">
+                                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32"
+                                             height="32" viewBox="0 0 32 32">
+                                            <g fill="none" stroke="#01C1C6" stroke-width="1.5" stroke-linejoin="round"
+                                               stroke-miterlimit="10">
+                                                <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                                <path class="arrow-icon--arrow"
+                                                      d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card px-3 mb-4 shadow-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="{% comment %}col-sm-12{% endcomment %} col-3 align-items-center d-flex card-dash-pic pl-0">
+                                    <img class="img-fluid d-block"
+                                         src="{% static 'images/Dashboard - Pasien/undraw_events_2p66.svg' %}"
+                                         alt="Pembayaran Psikolog">
+                                </div>
+                                <div class="col-7 align-items-center d-flex card-dash-text">
+
+                                    <p class="text-primary my-0 card-dash-text-obj"><b>Tambahkan Acara</b></p>
+
+                                </div>
+                                <div class="col-2 align-items-center d-flex card-dash-arrow">
+                                    <a class="link link--arrowed" href="#">
+                                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32"
+                                             height="32" viewBox="0 0 32 32">
+                                            <g fill="none" stroke="#01C1C6" stroke-width="1.5" stroke-linejoin="round"
+                                               stroke-miterlimit="10">
+                                                <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                                <path class="arrow-icon--arrow"
+                                                      d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card px-3 mb-4 shadow-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="{% comment %}col-sm-12{% endcomment %} col-3 align-items-center d-flex card-dash-pic pl-0">
+                                    <img class="img-fluid d-block"
+                                         src="{% static 'images/Dashboard - Pasien/undraw_to_do_list_a49b.svg' %}"
+                                         alt="Pembayaran Psikolog">
+                                </div>
+                                <div class="col-7 align-items-center d-flex card-dash-text">
+
+                                    <p class="text-primary my-0 card-dash-text-obj"><b>Buat Artikel</b></p>
+
+                                </div>
+                                <div class="col-2 align-items-center d-flex card-dash-arrow">
+                                    <a class="link link--arrowed" href="#">
+                                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32"
+                                             height="32" viewBox="0 0 32 32">
+                                            <g fill="none" stroke="#01C1C6" stroke-width="1.5" stroke-linejoin="round"
+                                               stroke-miterlimit="10">
+                                                <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                                <path class="arrow-icon--arrow"
+                                                      d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card px-3 mb-4 shadow-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="{% comment %}col-sm-12{% endcomment %} col-3 align-items-center d-flex card-dash-pic pl-0">
+                                    <img class="img-fluid d-block"
+                                         src="{% static 'images/Dashboard - Admin/undraw_book_lover_mkck.svg' %}"
+                                         alt="Pembayaran Psikolog">
+                                </div>
+                                <div class="col-7 align-items-center d-flex card-dash-text">
+
+                                    <p class="text-primary my-0 card-dash-text-obj"><b>Tambah Kutipan</b></p>
+
+                                </div>
+                                <div class="col-2 align-items-center d-flex card-dash-arrow">
+                                    <a class="link link--arrowed" href="{% url 'psychotip_admin:quote_of_the_day' %}">
+                                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="32"
+                                             height="32" viewBox="0 0 32 32">
+                                            <g fill="none" stroke="#01C1C6" stroke-width="1.5" stroke-linejoin="round"
+                                               stroke-miterlimit="10">
+                                                <circle class="arrow-icon--circle" cx="16" cy="16" r="15.12"></circle>
+                                                <path class="arrow-icon--arrow"
+                                                      d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+{% endblock %}
+
+{% block javascript %}
+    <script>
+
+        $(document).ready(function () {
+
+            if ($(window).width() < 992) {
+                $(".dash-text").removeClass("display-4").addClass("display-5");
+            }
+
+            if ($(window).width() < 768) {
+                $(".dash-title").addClass("text-center");
+
+                $(".card-dash-pic").addClass("justify-content-center my-2");
+                $(".card-dash-text").addClass("justify-content-center my-2");
+                $(".card-dash-arrow").addClass("justify-content-center my-2");
+            }
+
+        });
+
+        $(window).on('resize', function () {
+
+            if ($(window).width() < 992) {
+                $(".dash-text").removeClass("display-4").addClass("display-5");
+            } else {
+                $(".dash-text").removeClass("display-5").addClass("display-4");
+            }
+
+            if ($(window).width() < 768) {
+                $(".dash-title").addClass("text-center");
+
+                $(".card-dash-pic").addClass("justify-content-center my-2");
+                $(".card-dash-text").addClass("justify-content-center my-2");
+                $(".card-dash-arrow").addClass("justify-content-center my-2");
+            } else {
+                $(".dash-title").removeClass("text-center");
+
+                $(".card-dash-pic").removeClass("justify-content-center my-2");
+                $(".card-dash-text").removeClass("justify-content-center my-2");
+                $(".card-dash-arrow").removeClass("justify-content-center my-2");
+            }
+        });
+
+    </script>
+{% endblock %}

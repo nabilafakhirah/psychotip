@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.testapplication.MainActivity">
+
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_token_icon"
+        android:title="Token"
+        app:showAsAction="ifRoom"/>
+</menu>

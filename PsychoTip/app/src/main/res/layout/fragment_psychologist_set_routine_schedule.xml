@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PsychologistSetRoutineSchedule"
+    android:background="@color/colorWhite">
+
+    <!--<include
+        android:id="@+id/set_routine_toolbar"
+        layout="@layout/toolbar_item" />-->
+
+    <TextView
+        android:id="@+id/set_routine_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/muli_black"
+        android:text="Tentukan jadwal praktek rutin"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/set_routine_day"
+        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_routine_title" />
+
+    <EditText
+        android:id="@+id/set_routine_start_time"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:drawableEnd="@drawable/ic_access_time_primary_24dp"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Jam Awal"
+        android:textColorHint ="@color/colorPrimary"
+        android:textColor ="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/set_routine_end_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_routine_day"/>
+
+    <EditText
+        android:id="@+id/set_routine_end_time"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:drawableEnd="@drawable/ic_access_time_primary_24dp"
+        android:ems="10"
+        android:fontFamily="@font/muli"
+        android:hint="Jam Akhir"
+        android:textColorHint ="@color/colorPrimary"
+        android:textColor ="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/set_routine_start_time"
+        app:layout_constraintTop_toBottomOf="@+id/set_routine_day"/>
+
+
+    <TextView
+        android:id="@+id/set_routine_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/muli"
+        android:text="Untuk jadwal harian dapat diisi dari kalender."
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_routine_start_time" />
+
+    <Button
+        android:id="@+id/set_routine_send_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/primary_button"
+        android:text="KIRIM"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_routine_description_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

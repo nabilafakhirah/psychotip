@@ -1,0 +1,225 @@
+{% comment %}
+{% load staticfiles %}
+{% load static %}
+<html lang="en">
+<head>
+    <title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<div class="loginbox">
+    <h1>ADMIN</h1>
+    <form method="POST" action="{% url 'psychotip_admin:authenticate_login' %}">
+        <input type="text" name="" placeholder="Username">
+        <input type="password" name="" placeholder="Password">
+        <br> <br>
+        <input type="submit" name="" value="Login">
+        <a href="#">Lost your password?</a><br>
+        <a href="#">Don't have an account?</a>
+    </form>
+</div>
+<div class="py-5 text-center h-100 align-items-center d-flex">
+    <div class="container py-5">
+        <div class="row">
+            <div class="mx-auto col-lg-8 col-md-10">
+                <div class="card shadow-card">
+                    <div class="card-body">
+                        <h1 class="py-3">Login</h1>
+                        <form method="POST" action="{% url 'psychotip_admin:authenticate_login' %}">
+                            <div class="form-group"><label>Email address</label> <input type="email"
+                                                                                        class="form-control"
+                                                                                        placeholder="Enter email">
+                                <small class="form-text text-muted">We'll never share your email with anyone else.
+                                </small>
+                            </div>
+                            <div class="form-group"><label>Password</label> <input type="password" class="form-control"
+                                                                                   placeholder="Password"></div>
+                            <button type="submit" class="btn btn-primary">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>{% endcomment %}
+
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>E-Canteen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!--===============================================================================================-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 px-4 py-4">
+            <svg class="logo mx-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 491.79 122.21">
+                <defs>
+                    <style>.cls-1 {
+                        fill: #01c1c6;
+                    }</style>
+                </defs>
+                <title>Asset 3</title>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path class="cls-1"
+                              d="M177.22,30.05a13.66,13.66,0,0,1,4.61,10.51,14.49,14.49,0,0,1-4.36,10.66q-4.36,4.36-13.36,4.36H155v20.3h-8.21v-50h17.28Q172.61,25.84,177.22,30.05ZM155,49.17h9.07q4.68,0,7-2.23a8.27,8.27,0,0,0,2.3-6.23,8.27,8.27,0,0,0-2.3-6.23q-2.31-2.23-7-2.23H155Z"/>
+                        <path class="cls-1"
+                              d="M186.08,47.59a10.67,10.67,0,0,1,4.25-8.53q4.25-3.49,11.16-3.49t11,3.42a12.39,12.39,0,0,1,4.36,9.32H208.4a6.57,6.57,0,0,0-2.05-4.61A7.42,7.42,0,0,0,201.2,42,8.17,8.17,0,0,0,196,43.52a4.71,4.71,0,0,0-1.87,3.89,4.19,4.19,0,0,0,2.38,3.78,18.45,18.45,0,0,0,5.8,2q3.42.65,6.84,1.58a12.38,12.38,0,0,1,5.8,3.42,9.24,9.24,0,0,1,2.38,6.66A10,10,0,0,1,213,73.29q-4.36,3.24-11.2,3.24t-11.09-3.31A12.44,12.44,0,0,1,186,63.79h8.5a6.37,6.37,0,0,0,2.16,4.61A7.89,7.89,0,0,0,202,70.05a8.71,8.71,0,0,0,5.33-1.48,4.65,4.65,0,0,0,2-3.92,4.22,4.22,0,0,0-2.38-3.82,19.12,19.12,0,0,0-5.8-2.05q-3.42-.68-6.84-1.58a12.54,12.54,0,0,1-5.8-3.28A8.56,8.56,0,0,1,186.08,47.59Z"/>
+                        <path class="cls-1"
+                              d="M235.47,75.23l-15.62-39H229l11.16,30.24,11.59-30.24h8.5L235.9,94.53h-8.5Z"/>
+                        <path class="cls-1"
+                              d="M267.29,70.91q-5.4-5.62-5.4-14.87t5.44-14.87a18.63,18.63,0,0,1,14-5.62A19.78,19.78,0,0,1,293.25,39a16.85,16.85,0,0,1,6.37,9.76h-8.86q-2.23-6.27-9.43-6.26a9.94,9.94,0,0,0-8,3.56q-3,3.56-3,10t3,10a9.89,9.89,0,0,0,8,3.6q7.13,0,9.43-6.26h8.86A17.72,17.72,0,0,1,293.14,73a19.13,19.13,0,0,1-11.81,3.56Q272.69,76.53,267.29,70.91Z"/>
+                        <path class="cls-1"
+                              d="M314.24,22.6V42.47q4-6.91,12.67-6.91A14.79,14.79,0,0,1,338,40q4.35,4.47,4.36,12.46v23.4h-8.14V53.71q0-5.33-2.66-8.17a9.48,9.48,0,0,0-7.27-2.84,9.6,9.6,0,0,0-7.31,2.84q-2.7,2.84-2.7,8.17V75.88H306V22.6Z"/>
+                        <path class="cls-1"
+                              d="M368.2,76.53a19.29,19.29,0,0,1-14.29-5.65q-5.61-5.65-5.62-14.83t5.8-14.83a21.26,21.26,0,0,1,28.87,0q5.79,5.65,5.8,14.8t-5.94,14.83A20.33,20.33,0,0,1,368.2,76.53ZM376.73,66q3.6-3.6,3.6-10t-3.49-10a11.41,11.41,0,0,0-8.46-3.56A11.06,11.06,0,0,0,360,46q-3.39,3.56-3.38,10t3.31,10a10.79,10.79,0,0,0,8.24,3.56A11.66,11.66,0,0,0,376.73,66Z"/>
+                        <path class="cls-1" d="M392.5,32.25V25.84h34.92v6.41H414.1V75.88h-8.21V32.25Z"/>
+                        <path class="cls-1"
+                              d="M443.26,25.7A5.22,5.22,0,1,1,434.33,22a5.22,5.22,0,0,1,8.93,3.74ZM433.9,75.88V36.21h8.21V75.88Z"/>
+                        <path class="cls-1"
+                              d="M473.14,35.56a17.55,17.55,0,0,1,13.32,5.65q5.33,5.65,5.33,14.69t-5.36,14.83a17.37,17.37,0,0,1-13.28,5.8,15.2,15.2,0,0,1-8.21-2.2,16.26,16.26,0,0,1-5.62-5.87V94.75h-8.21V36.21h8.21v7.06a15.54,15.54,0,0,1,5.58-5.58A15.8,15.8,0,0,1,473.14,35.56Zm6.7,30.13a13.51,13.51,0,0,0,3.6-9.83q0-6.12-3.56-9.65a11.66,11.66,0,0,0-8.5-3.53,11.55,11.55,0,0,0-8.5,3.6q-3.56,3.6-3.56,9.72t3.56,9.76a11.62,11.62,0,0,0,17-.07Z"/>
+                        <path class="cls-1"
+                              d="M66.61,85.18a39.59,39.59,0,0,1-5.19-.34,1.64,1.64,0,1,1,.43-3.25c4.49.6,13.24.85,21.38-4.17,11.51-7.09,19.7-23.6,13.48-38.94-5.95-14.66-21.83-18.15-22.5-18.29C59.91,17.18,47.9,24.92,42,32.46c-7.79,9.9-7.73,17.81-6.31,22.7.07.24.14.51.23.81.74,2.73,2,7.3,5.8,8.81,4.34,1.73,10-1,11.8-4.34.85-1.6.63-2.9.32-4.7a14.16,14.16,0,0,1,.4-7.82c.48-1.37,3.26-8.27,10.21-9.76a14.12,14.12,0,0,1,8.32.86,11.87,11.87,0,0,1,6.38,6.23,12.85,12.85,0,0,1-2,12.76,1.64,1.64,0,0,1-2.6-2,9.57,9.57,0,0,0,1.54-9.48c-1.82-4.32-7-6-11-5.16-5.36,1.15-7.58,7-7.81,7.65A10.92,10.92,0,0,0,57,55.2c.35,2.07.72,4.21-.66,6.8-2.8,5.26-10.38,8-15.91,5.84-5.32-2.12-6.9-7.89-7.75-11-.08-.28-.15-.53-.21-.76-1.64-5.63-1.77-14.65,6.88-25.64A38.39,38.39,0,0,1,54.23,19.12,34.35,34.35,0,0,1,74.89,17a38.61,38.61,0,0,1,10.42,4.17,33,33,0,0,1,14.44,16.1,33.79,33.79,0,0,1,.1,24.41A37.07,37.07,0,0,1,85,80.21,34.86,34.86,0,0,1,66.61,85.18Z"/>
+                        <path class="cls-1"
+                              d="M70.47,74.61a1.64,1.64,0,0,1-.38-3.23A21.05,21.05,0,0,0,86.18,54.8C88,44.61,80.65,37.27,80.34,37A20.71,20.71,0,0,0,60.7,31.73a19.26,19.26,0,0,0-9,5.47c-6.61,7.41-4.31,17.61-4,18.75a1.64,1.64,0,0,1-3.18.79C44,54.61,41.68,43.51,49.24,35a22.33,22.33,0,0,1,10.6-6.46,23.5,23.5,0,0,1,12,0,23.84,23.84,0,0,1,10.83,6.1c.91.89,8.8,9.08,6.77,20.74A24.33,24.33,0,0,1,70.85,74.56,1.64,1.64,0,0,1,70.47,74.61Z"/>
+                        <path class="cls-1"
+                              d="M76.3,96.55h-.55a42.23,42.23,0,0,1-19.4-5.17,1.64,1.64,0,1,1,1.56-2.88A38.41,38.41,0,0,0,75.8,93.27a40.15,40.15,0,0,0,34.05-18.66c5.39-8.69,6.69-18.95,3.88-30.47a60.44,60.44,0,0,0-6.85-16.65C99.66,15.94,88.12,8.39,72.58,5.05a79,79,0,0,0-23-1.5c-22,2.44-36.88,11.28-43,25.56C2,39.88.3,60,14.33,71.21a30.12,30.12,0,0,0,19.14,6.44,38.55,38.55,0,0,0,19.16-5.12C55.06,71.06,60.1,68,62.92,61.72a22.83,22.83,0,0,0,1.76-11.91,1.64,1.64,0,1,1,3.26-.37,26,26,0,0,1-2,13.63A27.21,27.21,0,0,1,54.34,75.34a41.16,41.16,0,0,1-19.8,5.57,33.77,33.77,0,0,1-22.25-7.14C5.54,68.37,1.39,60.51.29,51A47.13,47.13,0,0,1,3.6,27.83c4.27-10,12.44-17.56,24.3-22.4A79,79,0,0,1,49.21.29C50.91.1,91.07-4,109.66,25.76c1.76,2.82,16.83,28.21,3,50.58A43.51,43.51,0,0,1,76.3,96.55Z"/>
+                        <path class="cls-1"
+                              d="M66.65,122.21c-6,0-12.83-4.16-17.49-8.46-2-1.8-8.19-8-6.53-12.49,2.06-5.55,15.3-4.13,21.39-2.57h0l-.41,1.59L64,98.69c4.68,1.2,12.51,3.2,14,9.42,1.18,4.77-2,10.9-6.76,13.12A10.92,10.92,0,0,1,66.65,122.21ZM52.9,100.57H52c-4.17.12-6,1.06-6.27,1.82-.42,1.14,1.06,4.67,5.69,8.94,5.39,5,13.49,9.26,18.53,6.92,3.35-1.56,5.76-6.11,5-9.36-1.06-4.32-7.71-6-11.68-7l.41-1.59-.41,1.59A44.13,44.13,0,0,0,52.9,100.57Z"/>
+                    </g>
+                </g>
+            </svg>
+            {% comment %}<p id="errmsg"> {{ message }} </p>{% endcomment %}
+
+            <form class="login100-form validate-form" action="{% url 'psychotip_admin:authenticate_login' %}"
+                  method="POST">
+                {% csrf_token %}
+                <span class="login100-form-title mt-3 mb-4">
+						Login
+					</span>
+
+                <div class="wrap-input100 validate-input mb-2" data-validate="Username is required">
+                    <span class="label-input100">Username</span>
+                    <input class="input100" type="text" name="username" id="username" placeholder="Type your username">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" name="password" id="password" placeholder="Type your password">
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+
+                <div class="text-right pt-1 pb-3">
+                    <a href="#">
+                        Forgot password?
+                    </a>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button type="submit" class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <svg class="wave-1" viewBox="0 0 1440 482" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M372.537 156.612C215.762 180.731 78.7229 66.2588 -21 0V493.929L1517.01 512V224.878C1392.52 224.878 1019.06 0 812.255 0C619.502 0 503.047 136.533 372.537 156.612Z"
+              fill="url(#paint0_linear)" fill-opacity="0.5"/>
+        <defs>
+            <linearGradient id="paint0_linear" x1="748.004" y1="-138.541" x2="748.004" y2="451.765"
+                            gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D7F5B5"/>
+                <stop offset="1" stop-color="#EEFAF2" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+    </svg>
+    <svg class="wave-2" viewBox="0 0 1440 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M242.459 0C131.626 0 -45.332 21.417 -131 100.392V254.996H1511.42V100.392C1439.8 21.417 1273.29 0 1156.03 0C1009.45 0 804.655 100.392 672.137 100.392C539.62 100.392 381 0 242.459 0Z"
+              fill="url(#paint0_linear)" fill-opacity="0.5"/>
+        <defs>
+            <linearGradient id="paint0_linear" x1="690.208" y1="-136.533" x2="690.208" y2="254.996"
+                            gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D7F5B5"/>
+                <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+
+{% comment %}	<style>
+		#errmsg {
+			text-align: center;
+			color: red;
+		}
+	</style>{% endcomment %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        if ($(window).width() < 401) {
+            $(".logo").removeClass("mx-5").addClass("mx-4");
+        }
+
+    });
+
+    $(window).on('resize', function () {
+
+        if ($(window).width() < 401) {
+            $(".logo").removeClass("mx-5").addClass("mx-4");
+        } else {
+            $(".logo").removeClass("mx-4").addClass("mx-5");
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

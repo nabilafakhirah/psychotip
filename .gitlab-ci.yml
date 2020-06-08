@@ -1,0 +1,173 @@
+stages:
+  - linter
+  - build
+  - test
+  - deploy
+
+variables:
+  ANDROID_COMPILE_SDK: "28"
+  ANDROID_BUILD_TOOLS: "28.0.3"
+  ANDROID_SDK_TOOLS: "4333796"
+
+pythonLinter:
+  image: python:3.6
+  stage: linter
+  before_script:
+    - cd Psychotip_backend
+    - pip install -r requirements.txt
+  script:
+    - pylint --disable=C0111,E1101,R0801,too-few-public-methods,inconsistent-return-statements,unused-argument --ignore=admin.py,urls.py,apps.py psychotip_admin/*.py api/*.py
+
+#checkStyle:
+#  image: gradle:5.3.0-jdk8-alpine
+#  stage: linter
+#  script:
+#    - cd PsychoTip
+#    - gradle checkstyle
+
+assembleDebug:
+  image: openjdk:8-jdk
+  stage: build
+  before_script:
+    - apt-get --quiet update --yes
+    - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
+    - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
+    - unzip -d android-sdk-linux android-sdk.zip
+    - echo y | android-sdk-linux/tools/bin/sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
+    - echo y | android-sdk-linux/tools/bin/sdkmanager "platform-tools" >/dev/null
+    - echo y | android-sdk-linux/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
+    - export ANDROID_HOME=$PWD/android-sdk-linux
+    - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+    # temporarily disable checking for EPIPE error and use yes to accept all licenses
+    - set +o pipefail
+    - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
+    - set -o pipefail
+  script:
+    - cd PsychoTip
+    - chmod +x gradlew
+    - ./gradlew clean assembleDebug
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/PsychoTip/app/build/outputs/apk/
+  except:
+    - master
+
+assembleRelease:
+  image: openjdk:8-jdk
+  stage: build
+  before_script:
+    - ls
+    - apt-get --quiet update --yes
+    - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
+    - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
+    - unzip -d android-sdk-linux android-sdk.zip
+    - echo y | android-sdk-linux/tools/bin/sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null
+    - echo y | android-sdk-linux/tools/bin/sdkmanager "platform-tools" >/dev/null
+    - echo y | android-sdk-linux/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null
+    - export ANDROID_HOME=$PWD/android-sdk-linux
+    - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+    # temporarily disable checking for EPIPE error and use yes to accept all licenses
+    - set +o pipefail
+    - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
+    - set -o pipefail
+  script:
+    - cd PsychoTip
+    - chmod +x gradlew
+    - ./gradlew clean assembleRelease
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/PsychoTip/app/build/outputs/apk/
+  only:
+    - master
+
+backendTest:
+  image: python:3.6
+  stage: test
+  before_script:
+    - cd Psychotip_backend
+    - pip install -r requirements.txt
+    - python manage.py makemigrations
+    - python manage.py migrate
+  script:
+    - coverage run --include='api/*','psychotip_admin/*' manage.py test
+    - coverage report -m
+
+androidTest:
+  image: jangrewe/gitlab-ci-android
+  stage: test
+  script:
+    - cd PsychoTip
+    - chmod +x gradlew
+    - ./gradlew clean jacocoTestReport
+    - awk -F"," '{ instructions += $4 + $5; covered += $5 } END { print covered, "/", instructions, "instructions covered"; if (instructions == 0){ print "100% covered" } else { print 100*covered/instructions, "% covered" }}' app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.csv
+  dependencies:
+    - assembleDebug
+    - assembleRelease
+
+backendDeploy:
+  image: gitlab/dind:latest
+  stage: deploy
+  tags:
+    - docker
+  before_script:
+    - docker info
+  script:
+    - cd Psychotip_backend
+    - chmod +x start.sh
+    - docker build -t backend_image -f BackendDockerfile .
+    - docker tag backend_image registry.docker.ppl.cs.ui.ac.id/b5/psychotip_backend:latest
+    - docker push registry.docker.ppl.cs.ui.ac.id/b5/psychotip_backend:latest
+  only:
+    - staging
+
+development:
+  image: gitlab/dind:latest
+  stage: deploy
+  tags:
+    - docker
+  before_script:
+    - docker info
+  script:
+    - cd PsychoTip
+    - docker build -t dev_apk -f Dockerfile .
+    - docker tag dev_apk registry.docker.ppl.cs.ui.ac.id/b5/psychotip/development:latest
+    - docker push registry.docker.ppl.cs.ui.ac.id/b5/psychotip/development:latest
+  dependencies:
+    - assembleDebug
+  except:
+    - staging
+    - master
+
+staging:
+  image: gitlab/dind:latest
+  stage: deploy
+  tags:
+    - docker
+  before_script:
+    - docker info
+  script:
+    - cd PsychoTip
+    - docker build -t staging_apk -f Dockerfile .
+    - docker tag staging_apk registry.docker.ppl.cs.ui.ac.id/b5/psychotip/staging:latest
+    - docker push registry.docker.ppl.cs.ui.ac.id/b5/psychotip/staging:latest
+  dependencies:
+    - assembleDebug
+  only:
+    - staging
+
+production:
+  image: gitlab/dind:latest
+  stage: deploy
+  tags:
+    - docker
+  before_script:
+    - docker info
+  script:
+    - cd PsychoTip
+    - docker build -t production_apk -f ProductionDockerfile .
+    - docker tag production_apk registry.docker.ppl.cs.ui.ac.id/b5/psychotip/production:latest
+    - docker push registry.docker.ppl.cs.ui.ac.id/b5/psychotip/production:latest
+  dependencies:
+    - assembleRelease
+  only:
+    - master

@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">PsychoTip</string>
+
+    <string name="psychoTip">Hello world! Welcome to PyschoTip!</string>
+
+    <string name="edit_message">Enter a message here!</string>
+    <string name="button_login">Masuk</string>
+    <string name="button_register">Daftar</string>
+
+    <string name="Hello">Hello world! </string>
+    <string name="PsychoTipText">Welcome to PyschoTip!</string>
+    <string name="btnMasuk">MASUK</string>
+    <string name="btnDaftar">DAFTAR</string>
+
+    <string name="title_activity_login_page">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="greeting">Halo, </string>
+    <string name="psychologist">Psychologist</string>
+    <string name="client">Client</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_account">Akun</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_information">Informasi</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifikasi</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_about_and_contact_us">AboutAndContactUsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_version">Being developed</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+
+    <string name="paragraph_placeholder_text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Aliquam sed sem vel arcu sagittis tincidunt. "
+        "Fusce id mauris id ipsum fermentum rhoncus. "
+        "In egestas non lectus eu sodales."
+        "Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla. "
+        "Vitae sapien pellentesque habitant morbi tristique senectus. "
+        "Curabitur vitae nunc sed velit. Risus at ultrices mi tempus imperdiet. "
+        "Aenean euismod elementum nisi quis eleifend. "
+        "Bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida. "
+        "Faucibus turpis in eu mi bibendum neque. Consequat mauris nunc congue nisi vitae suscipit tellus. "
+        "Arcu dui vivamus arcu felis bibendum ut tristique et. "
+        "Eu ultrices vitae auctor eu. Nunc eget lorem dolor sed."</string>
+
+    <string name="client_profile_name">Jane Doe</string>
+    <string name="client_profile_username">jane_doe98</string>
+    <string name="client_profile_birthdate">9 Februari 1998</string>
+    <string name="client_profile_gender">Perempuan</string>
+    <string name="client_profile_address">Jakarta</string>
+    <string name="client_profile_email">janedoe@gmail.com</string>
+
+    <string name="psych_profile_name">Sarah Sechan</string>
+    <string name="psych_profile_username">sarah_sechan</string>
+    <string name="psych_profile_birthdate">4 Februari 1988</string>
+    <string name="psych_profile_gender">Perempuan</string>
+    <string name="psych_profile_address">Jakarta</string>
+    <string name="psych_profile_email">sarah@gmail.com</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="this_is_home">This is HOME</string>
+
+    <string name="quote">“ Our wounds are often the openings into the best and most beautiful part of us. “</string>
+    <string name="quote_author">— David Richo</string>
+    <string name="psychologist_daily_schedule_date_text">%1$s</string>
+    <string name="psychologist_daily_schedule_time">00:00 AM - 02:00 AM</string>
+    <string name="psych_daily_schedule_delete_button_text">Delete schedule</string>
+    <string name="psych_add_sched_title_text">Tambah jadwal untuk hari ini</string>
+
+</resources>
